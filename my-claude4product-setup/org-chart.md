@@ -7,7 +7,7 @@
 ```mermaid
 graph TD
   subgraph GOV["⚖️ Capability Governance"]
-    WG["wise-gatekeeper\n📋 registry\n🗂️ org-chart"]
+    CA["caronte\n📋 registry\n🗂️ org-chart"]
   end
 
   subgraph DISC["🔍 Discovery & Strategy"]
@@ -65,7 +65,7 @@ Solid arrows = main delivery path. Dashed arrows = feedback and loop-back. Label
 
 ```mermaid
 flowchart TD
-    WG(["⚖️ wise-gatekeeper\nGovernance · weekly curation"])
+    CA(["⚖️ caronte\nGovernance · weekly curation"])
 
     subgraph DISC["🔍 Discovery & Evidence"]
         STR["🎯 strategist\nMission · priorities · go/no-go\nSkills: zms-discovery-paper · write-brd"]
@@ -92,7 +92,7 @@ flowchart TD
     GE["📣 gtm-expert\nPositioning · messaging · launch"]
 
     %% Governance
-    WG -. governs .-> STR
+    CA -. governs .-> STR
 
     %% ── Main delivery path ──────────────────────────────────────────
     STR ==>|"direction set"| PM
@@ -141,7 +141,7 @@ flowchart TD
 
     %% ── Personal layer ──────────────────────────────────────────────
     MIG(["🌅 mignolo\nDaily personal brief · Gmail+Chat\n⏰ 9AM Berlin cron"])
-    WG -. governs .-> MIG
+    CA -. governs .-> MIG
 ```
 
 ---
@@ -167,11 +167,34 @@ flowchart LR
 
 ---
 
+## Diagram 4 — Mignolo → Caronte Feedback Loop
+
+How Caronte learns what's missing from the stack by watching what you actually do each day.
+
+```mermaid
+flowchart LR
+    GMAIL(["📧 Gmail\nGoogle Chat\nGoogle Calendar"])
+    MIG["🌅 mignolo\nDaily brief · 9AM Mon–Fri\nWrites YYYY-MM-DD.txt\n+ digest JSON"]
+    DIGEST[("📁 digests/\nYYYY-MM-DD.json\nthreads + tier1_subjects\n~500 bytes · kept indefinitely")]
+    CA["⚖️ caronte\nWeekly curation · 8AM Monday\nMignolo Feed second pass"]
+    REG[("📋 registry.md\nactive · rejected · candidates\ncuration log")]
+    CHAT(["💬 Chat\nPROMOTE proposals\nuser approval required"])
+
+    GMAIL -->|"reads yesterday"| MIG
+    MIG -->|"Step 8: compress + write"| DIGEST
+    DIGEST -->|"reads last 30\nevery Monday"| CA
+    CA -->|"clusters recurring topics\ncount ≥ 3 → gap detected"| CHAT
+    CHAT -->|"approved → candidate"| REG
+    REG -->|"registry context\nfor next curation"| CA
+```
+
+---
+
 ## Agent Reference
 
 | Agent | Role | Invoke when | Skills | Model |
 |---|---|---|---|---|
-| wise-gatekeeper | HR director · capability auditor | Considering a new skill or agent; every Monday (cron) | registry · org-chart | opus |
+| caronte | HR director · capability auditor | Considering a new skill or agent; every Monday (cron) | registry · org-chart | opus |
 | master-delegator | Orchestrator | Complex goals needing parallel sub-tasks | dispatching-parallel-agents | — |
 | strategist | Mission setter · go/no-go | Any new initiative; direction unclear | zms-discovery-paper · write-brd | opus |
 | product-analyst | Evidence · research · validation | Claim needs proof; problem space unclear | zms-discovery-paper · competitive-analysis · analyze-feedback · market-sizing | sonnet |
@@ -181,8 +204,7 @@ flowchart LR
 | documentation-writer | READMEs · guides · API refs | New surface shipped; GTM needs assets | verification-before-completion | sonnet |
 | fact-checker | Code-grounded accuracy review | Doc about system ready for final review | verification-before-completion | opus |
 | kohavi | A/B testing · causal inference | Experiment design; result interpretation; causal claim | systematic-debugging · zms-discovery-paper · fourier-tutor · analyze-test | sonnet |
-| adtech-scientist (global) | Bidding · attribution · ML · Databricks | Any adtech analytical or modeling question | zms-discovery-paper · fourier-tutor · write-query · analyze-cohorts | sonnet |
-| adtech-scientist (local) | WBR anomaly hypotheses · repo analysis | Marchoi dispatches for mechanism-grounded explanations | — | sonnet |
+| adtech-scientist | Bidding · attribution · ML · Databricks | Any adtech analytical or modeling question | zms-discovery-paper · fourier-tutor · write-query · analyze-cohorts | sonnet |
 | prfaq-writer | PRFAQ drafting and revision | PRFAQ loop round — draft or revise | — | sonnet |
 | prfaq-researcher | Causal claims · axiom violations | PRFAQ loop round — annotate draft | — | sonnet |
 | gtm-expert | Positioning · launch · channels | Project nears ship-readiness | — | sonnet |
