@@ -8,7 +8,7 @@ Each post introduces one agent. You can drop the files directly into your own Cl
 
 ## The stack
 
-A team of named agents, each with a defined role, wired together through a shared dispatcher. The system covers product discovery, spec writing, data analysis, experiment design, audience adaptation, and personal productivity. A governance agent (Wise Gatekeeper) maintains the org chart and curates the roster weekly.
+A team of named agents, each with a defined role, wired together through a shared dispatcher. The system covers product discovery, spec writing, data analysis, experiment design, audience adaptation, and personal productivity. Caronte (the HR director) maintains the org chart and curates the roster weekly — including a feedback loop from Mignolo's daily briefs.
 
 ## Org chart
 
@@ -23,6 +23,7 @@ Each file is a Claude Code agent definition. To use one: place it in `.claude/ag
 | Agent | What it does | Released |
 |---|---|---|
 | [mignolo](agents/mignolo.md) | Daily personal brief — triages Gmail and Google Chat into a structured morning summary | 2026-06-21 |
+| [caronte](agents/caronte.md) | HR director — gatekeeps new agents and skills, curates the stack weekly, surfaces capability gaps from Mignolo's briefs | 2026-06-28 |
 
 ## Changelog
 
