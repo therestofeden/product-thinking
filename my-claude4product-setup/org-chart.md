@@ -200,7 +200,7 @@ flowchart TD
 
     STR["🎯 strategist\nIs this the right problem?\nWrite a Mission Brief"]
     PA["🔬 product-analyst\nIs there evidence for it?\nGather · validate · cite"]
-    KOH["📊 kohavi\nIs the causal logic sound?\nChallenge assumptions · EDD"]
+    KOH["📊 kohavi\nIs the causal logic sound?\nChallenge assumptions · how can we test it? · EDD creation"]
 
     subgraph PRFAQ["✍️ PRFAQ loop"]
         PW["prfaq-writer\ndraft · revise"]
