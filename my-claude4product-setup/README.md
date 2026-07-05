@@ -24,6 +24,11 @@ Each file is a Claude Code agent definition. To use one: place it in `.claude/ag
 |---|---|---|
 | [mignolo](agents/mignolo.md) | Daily personal brief — triages Gmail and Google Chat into a structured morning summary | 2026-06-21 |
 | [caronte](agents/caronte.md) | HR director — gatekeeps new agents and skills, curates the stack weekly, surfaces capability gaps from Mignolo's briefs | 2026-06-28 |
+| [strategist](agents/strategist.md) | Mission setter — turns a raw request into a Mission Brief, sets priorities, decides which agents run next | 2026-07-05 |
+| [product-analyst](agents/product-analyst.md) | Research and validation — gathers evidence before the team commits to a direction | 2026-07-05 |
+| [kohavi](agents/kohavi.md) | Causal integrity — designs experiments, challenges causal claims, writes rigorous EDDs. Named after Ron Kohavi | 2026-07-05 |
+| [prfaq-writer](agents/prfaq-writer.md) | PRFAQ drafting and revision — writes mechanism-level press releases and responds to researcher critique | 2026-07-05 |
+| [prfaq-researcher](agents/prfaq-researcher.md) | PRFAQ critic — annotates drafts with evidence-grounded challenges, flags axiom violations, never rewrites | 2026-07-05 |
 
 ## Changelog
 

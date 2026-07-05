@@ -190,6 +190,39 @@ flowchart LR
 
 ---
 
+## Diagram 5 — Post 3: From Hunch to Defensible Position
+
+The discovery chain: how an idea becomes something safe to put on a roadmap.
+
+```mermaid
+flowchart TD
+    HUNCH(["💡 Hunch\nraw idea or stakeholder ask"])
+
+    STR["🎯 strategist\nIs this the right problem?\nWrite a Mission Brief"]
+    PA["🔬 product-analyst\nIs there evidence for it?\nGather · validate · cite"]
+    KOH["📊 kohavi\nIs the causal logic sound?\nChallenge assumptions · EDD"]
+
+    subgraph PRFAQ["✍️ PRFAQ loop"]
+        PW["prfaq-writer\ndraft · revise"]
+        PR["prfaq-researcher\nannotate · flag axiom violations\nKNOWN / BELIEVED / ASSUMED"]
+        PW <-->|"N rounds\n(default cap: 2)"| PR
+    end
+
+    READY(["📋 Defensible position\nsafe to spec"])
+
+    HUNCH -->|"What are we solving?"| STR
+    STR -->|"opportunity validated?"| PA
+    PA -->|"evidence gathered"| KOH
+    KOH -->|"causal claims clean"| PRFAQ
+    PRFAQ -->|"clean export"| READY
+
+    STR -.->|"not validated →\ndo not spec yet"| HUNCH
+    PA -.->|"evidence contradicts →\npivot"| STR
+    KOH -.->|"causal gap →\ndesign experiment first"| PA
+```
+
+---
+
 ## Agent Reference
 
 | Agent | Role | Invoke when | Skills | Model |
