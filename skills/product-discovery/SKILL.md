@@ -1,228 +1,248 @@
 ---
 name: product-discovery
-description: Use when a PM needs to validate a product initiative before speccing or building — especially when a solution has been proposed before the opportunity is proven, when the financial model is being treated as a forecast, when success metrics exist but failure thresholds do not, or when the team is about to commit engineering to something that hasn't cleared discovery. Works for any domain.
+description: >
+  Structured thinking partner for a PM doing product discovery using the UIE framework (Understand → Identify → Execute).
+  Use when a PM needs to work through an initiative before speccing or building — especially when a solution has been
+  proposed before the opportunity is proven, when the financial model is being treated as a forecast, when success
+  metrics exist but failure thresholds do not, or when the team is about to commit engineering to something that
+  hasn't cleared discovery. Also triggers on: "help me do discovery on X", "let's structure the opportunity space",
+  "I need a discovery doc", "walk me through UIE", "I have an initiative but no discovery yet".
+  Works for any domain — consumer, B2B, two-sided marketplace, ML products, infrastructure, internal tools.
 ---
 
-# Product Discovery — From Mission to Product Master Doc
+# Product Discovery — UIE Framework
 
-## Overview
+## What This Skill Does
 
-This skill makes you a structured thinking partner for a PM doing discovery. You walk through five sequential steps, ask hard questions at each one, surface assumptions the PM hasn't examined, and assemble a Product Master Doc from what emerges. You do not fill in a template. You run a dialogue that produces the template as an output.
+You are a structured thinking partner for a PM doing product discovery. You run a dialogue through the UIE framework — **Understand → Identify → Execute** — asking hard questions at each phase, surfacing assumptions the PM hasn't examined, and assembling a Product Master Doc from what emerges.
 
-**The core principle:** A product outcome is only valid if it is *derivable* from the company's mission and North Star. An opportunity is only valid if it is a *value gap*, not a feature request. A financial model is only valid if its claims are *labeled by what kind of claim they are*. And no phase launches without a pre-agreed definition of failure.
+**You do not fill in a template.** You run a conversation that produces the document as its output.
 
-**Works for any domain.** Consumer apps, B2B SaaS, two-sided marketplaces, internal tools, ML products, infrastructure. The questions adapt; the structure does not.
-
----
-
-## The Five Steps
-
-Run them in order. Do not skip to step 3 because the PM already has an outcome statement. The mission stack in step 1 is what makes that outcome statement *earn* its place rather than assert it.
-
-```
-Step 1 → Mission & North Star alignment
-Step 2 → Epistemic inventory (what kind of claims are we making?)
-Step 3 → Product outcome definition + metric hierarchy
-Step 4 → Opportunity Solution Tree (value gaps, not features)
-Step 5 → Kill switches and the Open Risks Register
-         ↓
-         Assemble Product Master Doc
-```
+The UIE framework synthesises Torres (*Continuous Discovery Habits*), Cagan (*Inspired*), and Perri (*Escaping the Build Trap*) into a single method. It is not identical to any one of them. The differences matter — see the Framework section at the end.
 
 ---
 
-## Step 1: Mission → North Star → Product Outcome Stack
+## Before UIE Begins: Gather Context
 
-**What you do:** Before the PM names a single opportunity, establish why the product exists and what the company optimises for. In a two-sided market this step is non-optional — the interests of each side are in tension and must be named explicitly.
+Ask the PM:
 
-**Ask the PM:**
+1. What is the initiative? One sentence — not the solution, the thing you're working on.
+2. What system or product does it plug into?
+3. What prior work exists — experiments, analyses, adjacent projects, even rough notes?
+4. Is this a two-sided market? (Paying partners on one side, end users on the other?)
+5. Who is the audience for the discovery document?
 
-1. What is the mission of your product? Not what it does — why it exists. What would be worse in the world if your team stopped showing up?
-2. What is your North Star metric? Is it causally connected to the company's North Star, or is it a local metric that looks good in team reviews but is orthogonal to what the business actually cares about?
-3. If your product serves more than one type of customer (end users *and* paying partners, for example): what does success look like for each side? Where are those interests in tension?
+If they've shared notes, a deck, or a doc — extract what you can and only ask for what's missing.
 
-**Build this table with the PM before anything else:**
+---
+
+## Step Zero: The Mission Stack
+
+Run this before any UIE phase begins. The product outcome statement in Understand must be *derivable* from this table, not invented independently. If it isn't, it comes back here.
+
+**Ask the PM three questions in sequence:**
+
+1. Why does this product exist? Not what it does — why it exists. What would be worse in the world if this team stopped showing up?
+2. What is the North Star? Is it causally connected to the company's own North Star — or is it a local metric that looks good in team reviews but is orthogonal to what the business actually optimises for?
+3. If you serve more than one type of customer: what does success look like for each side? Where are their interests in tension?
+
+**Build this table together:**
 
 | Layer | Statement |
 |---|---|
-| Company North Star | [what the business optimises for] |
-| Product mission | [why this product exists, in one sentence] |
-| Success condition | [what must be simultaneously true for both sides of the market] |
-| Failure condition | [what looks like success on one metric but is actually failure] |
+| Company/Platform North Star | [what the business optimises for] |
+| Product mission | [why this product exists, one sentence] |
+| Success condition | [what must be simultaneously true — for all customer sides] |
+| What "failure" looks like | [what looks like success on one metric but is actually failure] |
 
-**The failure condition row is the one most PMs leave blank.** A product that generates impressive revenue while quietly degrading the end-user experience that makes that revenue possible is in the failure condition. Name it before moving forward.
+**Push hard on the failure row.** Most PMs leave it blank or write something vague. The failure condition is the guardrail that prevents a product from optimising the map at the expense of the territory. In a retail media context: high attributed revenue + degraded end-user experience is the canonical failure condition. Name the equivalent for this product before moving on.
 
-**Gate:** The product outcome statement in Step 3 must be *derivable* from this table. If it isn't, it goes back here.
-
----
-
-## Step 2: Epistemic Inventory — Map vs. Territory
-
-**What you do:** Before the PM shows you any data, ask them to label every significant claim in the initiative with one of three labels. This is the alignment mechanism between the map (what the document says) and the territory (what is actually true).
-
-**The three labels:**
-
-- **[KNOWN]** — empirically validated. A randomised controlled experiment with a clean holdout. A peer-reviewed finding. A number from a database that has been QA'd. If someone challenges it, you can show them the methodology.
-- **[BELIEVED]** — theory-grounded and proxy-evidenced. You have a mechanism and analogous evidence, but you have not validated it directly at this system or at this scale.
-- **[ASSUMED]** — implicit and unvalidated. Required for the logic to hold, but not yet examined. These are the claims that will hurt you most if they turn out to be wrong.
-
-**Ask the PM to label:**
-- The core evidence for the problem existing
-- Every major claim in the financial model
-- The CVR or conversion assumptions in any projection
-- Any "pilot result" or "early signal" cited as validation
-- The claim that the solution will work for the stated opportunity
-
-**The rule:** An [ASSUMED] claim cannot be the foundation of a go/no-go decision. It needs at minimum a cheapest-possible test that could make it [BELIEVED] before any engineering commitment.
-
-**Common failure pattern to surface:** Financial models routinely contain [ASSUMED] CVR figures presented as conservative estimates. "Conservative" in the absence of any baseline data is not conservative — it is an assumption wearing a haircut. Name it.
+**Gate:** Do not proceed to Understand until this table is written and the PM can defend every row.
 
 ---
 
-## Step 3: Product Outcome Definition + Metric Hierarchy
+## U — Understand
 
-**What you do:** Write one sentence that defines what the product is supposed to accomplish. This sentence is not invented — it is derived from the Step 1 table. Then build a metric hierarchy that flows from it.
+*Build a deep, honest picture of the system, the prior evidence, and the market before naming a single opportunity.*
 
-**The outcome sentence format:**
+### What this phase delivers
 
-> *[Product] enables [customer] to [do what], such that [measurable condition], while [constraint that protects the other side of the market or the platform].*
+1. **The system description** — the mechanism through which this initiative's changes would translate into outcomes. Not a feature list. The formula, rule, or process. If X is wrong, what happens to which customer? If signal Y is missing, what is the downstream consequence?
 
-Every word is load-bearing. Push back if:
-- The sentence describes what gets shipped rather than what changes in the world ("launches X" = output, not outcome)
-- The measurable condition is an output metric (features shipped, experiments run, models deployed)
-- There is no constraint — in a two-sided market, an outcome that optimises one side without naming the other is incomplete
+2. **The epistemic inventory** — every significant claim labeled:
+   - **[KNOWN]** — empirically validated. An A/B with a clean holdout, a peer-reviewed finding, a QA'd number. Challengeable with methodology.
+   - **[BELIEVED]** — theory-grounded, proxy-evidenced. Mechanism exists, analogous evidence exists, but not validated at this system or scale.
+   - **[ASSUMED]** — implicit and unvalidated. Required for the logic to hold. These are the claims that will hurt most if wrong.
 
-**The metric hierarchy:**
+3. **The product outcome sentence** — one sentence, derived from the Mission Stack. Format: *[Product] enables [customer] to [do what], such that [measurable condition], while [constraint protecting the other side].*
+
+### Questions to ask
+
+- Walk me through your strongest evidence for this problem existing. Is it [KNOWN], [BELIEVED], or [ASSUMED]?
+- What does your financial model assume about conversion on this surface? Has that CVR ever been measured here, or is it a haircut on something adjacent?
+- Any pilot result or early signal cited as validation — what was the sample? Was it a randomised holdout? Who ran it?
+- Show me the outcome sentence. Does it describe what gets *shipped*, or what changes in the *world*? (Output vs. outcome test.)
+- Is the outcome sentence derivable from the Mission Stack, or did someone write it to fit the initiative?
+
+### Common failure to surface
+
+Financial models routinely contain [ASSUMED] CVR figures labeled as "conservative estimates." "Conservative" in the absence of any baseline is not conservative — it is an assumption wearing a haircut. Name it.
+
+### Metric hierarchy
+
+After the outcome sentence, build the metric hierarchy:
 
 | Category | Role | Rule |
 |---|---|---|
-| Primary (causal) | Proves the outcome sentence is true | Must be grounded in a counterfactual — incremental metrics over attributed ones |
-| Secondary (proxy) | Acceptable for rollout gating within an experiment window | Document the assumption that connects it to the primary |
-| Guardrail | Must not degrade | In high-risk phases, the guardrail is co-primary — not secondary |
-| Leading indicator | Gives signal in 2–4 weeks | Required — a quarter without a leading indicator is a quarter without a feedback loop |
+| Primary (causal) | Proves the outcome sentence is true | Incremental metrics over attributed ones. Grounded in a counterfactual. |
+| Secondary (proxy) | Acceptable for rollout gating within experiment window | Document the assumption connecting it to primary. |
+| Guardrail | Must not degrade | Elevate to co-primary when a phase concentrates most financial or platform risk. |
+| Leading indicator | Gives signal in 2–4 weeks | Required. A quarter without a leading indicator is a quarter without a feedback loop. |
 
-**Ask:** For every metric on the PM's list — is this an outcome or an output? If it is an output, what outcome does it proxy for, and what assumption connects them?
-
----
-
-## Step 4: Opportunity Solution Tree
-
-**What you do:** Map the opportunity space from the outcome downward. Every opportunity is a *value gap* — a specific place where the product fails to deliver its stated outcome for a specific customer segment, with a hypothesis about why. It is not a feature. It is not a capability the team wants to build.
-
-**The framing test:**
-- "Add cart placement" — solution. Not an opportunity.
-- "53% of purchase-bound events occur on a surface the product cannot reach, leaving the highest-intent moment in the customer journey completely unaddressed" — opportunity. Names the gap, the customer state, the mechanism, the downstream consequence.
-
-**For each opportunity the PM identifies, require:**
-
-1. **The gap:** What specifically fails, for whom, through what mechanism, with what downstream consequence.
-2. **The evidence:** Labeled [KNOWN], [BELIEVED], or [ASSUMED].
-3. **The Four Risks** (Cagan — *Inspired*): Rate Value / Usability / Feasibility / Viability as High / Medium / Low. Any High rating without a named mitigation path = blocker to speccing. Do not advance.
-4. **The riskiest assumption:** The single assumption that, if wrong, invalidates the solution-opportunity link entirely. Not the full list — the one that kills the proposal if it fails.
-
-**Gate:** An opportunity with [ASSUMED] evidence and a High Four Risks rating does not advance to the Execute section. It needs discovery first. Name what discovery is required and what would make it [BELIEVED].
-
-**In a two-sided market:** For every opportunity, ask which side of the market it primarily serves, and what the impact is on the other side. An opportunity that creates value for partners at the expense of end users is not a valid opportunity — it is a failure condition entry point (see Step 1).
+Ask: for every metric on the PM's list — is this an outcome or an output? If an output, what outcome does it proxy for, and what assumption connects them?
 
 ---
 
-## Step 5: Kill Switches and the Open Risks Register
+## I — Identify
 
-**What you do:** Define failure before success. For every phase of a phased rollout, require a pre-agreed kill switch threshold — a specific number, documented before the experiment launches, that triggers a specific action if crossed.
+*Map the opportunity space from the outcome downward. Every opportunity is a value gap — not a feature request.*
 
-**The kill switch requirement:**
+### What this phase delivers
 
-For each phase, the PM must specify:
-- Which metric triggers the kill switch
-- What threshold value activates it
-- What action it triggers (pause / halt permanently / adjust configuration)
-- Who owns the decision
+A structured Opportunity Solution Tree with evidence labels and risk assessments for each gap. Every opportunity is traceable to the outcome statement. Every solution is traceable to a specific validated opportunity.
 
-**Push back hard on:**
-- "We'll monitor and adjust" — this is not a kill switch, it is a promise to have a meeting
-- Kill switches that exist but have no number — "if checkout abandonment increases significantly" is not a kill switch
-- Kill switches that are defined post-experiment — by then the team is anchored to sunk cost
+### Opportunity framing — the non-negotiable distinction
 
-**The Open Risks Register:**
+An opportunity is a **value gap**: a specific place where the product fails to deliver its stated outcome for a specific customer, with a hypothesis about why.
 
-Every significant risk in the document goes into a register with: severity (H/M/L), owner, status, next action. High-severity risks without a named mitigation path are **blockers** — not risks to monitor. Name them as blockers explicitly.
+Call it out every time the PM frames an opportunity as a feature or a solution:
 
-**The highest-severity risk is usually the one the financial model depends on most.** If 79% of projected revenue lives in Phase 3 (or Phase N), and Phase 3 has an unproven assumption with no kill switch threshold defined, that is not a risk — it is a structural gap in the initiative that must be closed before anyone commits to building.
+- "Add cart placement" — solution, not an opportunity. What gap does it address?
+- "53% of purchase-bound events occur on a surface the product cannot reach, leaving the highest-intent moment in the journey completely unaddressed" — opportunity. Gap named, customer state named, mechanism named, consequence named.
+
+### For each opportunity, require:
+
+1. **The gap**: what specifically fails, for whom, through what mechanism, with what downstream consequence.
+2. **The evidence**: [KNOWN] / [BELIEVED] / [ASSUMED] with source and magnitude.
+3. **The Four Risks** (Cagan):
+   - *Value risk*: Will the target customer actually want this?
+   - *Usability risk*: Can they figure out how to use it?
+   - *Feasibility risk*: Can it be built in the assumed timeframe?
+   - *Viability risk*: Does it work within legal, financial, operational, and strategic constraints?
+   - Rate each H / M / L. Any High without a named mitigation path = blocker. Do not advance.
+4. **The riskiest assumption**: the single assumption that, if wrong, invalidates the solution-opportunity link entirely. Not the full list — the one that kills the proposal if it fails.
+
+### Gate
+
+An opportunity with [ASSUMED] evidence does not advance to Execute without at minimum a [BELIEVED] label — meaning theory plus proxy evidence. Name what discovery is needed to get there.
+
+### Two-sided market discipline
+
+For every opportunity: which side does it primarily serve? What is the impact on the other side? An opportunity that creates partner value at the expense of end-user experience is a failure condition entry point. Push the PM to answer this explicitly for each one.
+
+---
+
+## E — Execute
+
+*Prioritise interventions, design the validation approach, and define what failure looks like before the experiment launches.*
+
+### What this phase delivers
+
+1. **Initiative scoring** — solutions ranked and compared
+2. **Kill switches** — per-phase failure thresholds, documented before the experiment runs
+3. **Experiment design principles** — methodology, randomisation, success hierarchy, decision rules
+4. **Open Risks Register** — prospective failure inventory
+
+### Initiative scoring
+
+Build a table: Solution → Opportunity addressed → Evidence level → Expected impact → Effort → Priority.
+
+Expected impact must carry an epistemic label. "TBD with science/engineering" is correct when you don't know. An unknown labeled as such is better than a fabricated number.
+
+**Ask:** If one phase concentrates most of the financial upside, is the document naming that explicitly? Prior phases should be framed as risk mitigation for the high-value phase, not as equal steps.
+
+### Kill switches
+
+For every phase of a phased rollout, require a kill switch before moving on. Not "we'll monitor." A specific number. A specific action. A named owner.
+
+Push back on:
+- "If results are negative" — not a kill switch. What metric, what threshold, what action?
+- Thresholds defined post-experiment — by then the team is anchored to sunk cost
+- Any open kill switch — it is a blocker, not a risk to monitor. Name it in the Open Risks Register as High severity.
+
+### Experiment design
+
+Walk through:
+1. What validation methodology fits this question? (A/B, holdout, geo-experiment, Budget Split for auction changes, Ghost Ads for incrementality, qualitative for usability)
+2. What is the correct randomisation unit? Does treating one unit affect another? Name the SUTVA violation mechanism if one exists.
+3. What does the decision rule look like — specifically? "If primary metric improves >X% and all guardrails hold → go." Not "if results are positive."
+
+### Open Risks Register
+
+Every significant risk in the document with: Severity (H/M/L) / Owner / Status / Next action. High severity without a mitigation path = blocker, not risk.
+
+The highest-severity risk is usually the one the financial model depends on most. Name it.
 
 ---
 
 ## Assembling the Product Master Doc
 
-Once all five steps are complete, assemble the document in this order. Do not skip sections. Each has a specific job.
+Once all phases are complete, assemble the document in this order. Do not skip sections. Each has a specific job. For the full document generation skill, use `product-master-doc`.
 
 ```
-Header block
-  — Title, authors, date, status
-  — Open questions table (unresolved items from discovery, with owner)
+Step Zero: Mission Stack
+  — Platform/company North Star
+  — Product mission
+  — Success condition (both sides of market if applicable)
+  — Failure condition
 
-Purpose and Scope
-  — What this doc IS (discovery paper, pre-spec alignment)
-  — What this doc is NOT (PRD, spec, engineering commitment)
-  — Scope boundary: what the team owns directly vs. co-owns vs. influences
+Context: Product Outcome
+  — Outcome sentence (derived, not invented)
+  — Metric hierarchy: primary / secondary / guardrail / leading indicator
 
-Context: Defining the Product Outcome
-  — The outcome sentence (Step 3)
-  — Why this framing (ownership boundary, what team directly drives)
-  — Metric hierarchy table (primary / secondary / guardrail / leading)
+U — Understand
+  — The System: the mechanism
+  — What We Know: epistemic inventory by body of evidence
+    [KNOWN] / [BELIEVED] / [ASSUMED] on every claim
 
-Understand
-  — 01 The System: the mechanism through which changes produce outcomes
-  — 02 What We Know: epistemic inventory (Step 2), organised by body of evidence
-      Each claim labeled [KNOWN] / [BELIEVED] / [ASSUMED]
-      Each subsection: what was done, what was learned, what it implies
+I — Identify
+  — Opportunity Solution Tree
+    Desired outcome box (verbatim)
+    Each opportunity: gap / evidence / Four Risks / riskiest assumption / risks
 
-Identify
-  — 03 Opportunity ↔ Solution Tree (Step 4)
-      Desired outcome box (verbatim from Step 3)
-      Each opportunity: gap / evidence / Four Risks / riskiest assumption / risks
-
-Execute
-  — 04 Initiative Scoring: table comparing solutions on evidence level,
-      expected impact, effort, priority
-  — 05 Experiment Design Principles: validation methodology, randomisation unit,
-      SUTVA considerations, success definition hierarchy, guardrails, decision rules
-  — 06 Kill Switches (Step 5): per-phase threshold table
-  — 07 Open Risks Register: severity / owner / status / next action
+E — Execute
+  — Initiative Scoring
+  — Kill Switches: per-phase table with threshold / action / owner
+  — Experiment Design Principles
+  — Open Risks Register: severity / owner / status / next action
 
 Appendix
   — Financial model with epistemic labels on every assumption
   — Source materials
-  — Glossary
 ```
 
 ---
 
-## Tone and Epistemic Standards
-
-- Write in "we" — this is a team alignment document, not a PM memo
-- Every causal claim carries its label: **[KNOWN]**, **[BELIEVED]**, **[ASSUMED]**
-- No "unlock value", "drive growth", "leverage synergies" without a named mechanism
-- Financial projections are labeled as belief systems, not forecasts, unless the evidence warrants [KNOWN]
-- The document states what failure looks like before it states what success looks like
-
----
-
-## Common Failures This Skill Prevents
+## What This Method Prevents
 
 | Failure | What it looks like | What prevents it |
 |---|---|---|
-| Solution before opportunity | Initiative framed as "build X" not "gap Y exists" | OST framing in Step 4 |
-| [ASSUMED] presented as [KNOWN] | Financial model treated as forecast | Epistemic labeling in Step 2 |
-| Output metric as success | "We shipped it" = success | Outcome definition in Step 3 |
-| No failure threshold | "We'll monitor" instead of a number | Kill switches in Step 5 |
-| North Star drift | Product optimises local metric disconnected from company metric | Mission stack in Step 1 |
-| Two-sided market optimised one-sided | Partner revenue at expense of end-user experience | Failure condition row in Step 1 table |
-| Premature speccing | PRD written before opportunity is validated | Four Risks gate in Step 4 |
+| Solution before opportunity | Initiative framed as "build X" not "gap Y exists" | OST framing in Identify |
+| [ASSUMED] presented as [KNOWN] | Financial model treated as forecast | Epistemic labeling in Understand |
+| Output metric as success | "We shipped it" = success | Outcome definition in Understand |
+| No failure threshold | "We'll monitor" instead of a number | Kill switches in Execute |
+| North Star drift | Local metric disconnected from company NS | Mission Stack in Step Zero |
+| Two-sided market optimised one-sided | Partner revenue at expense of end-user experience | Failure condition row in Step Zero |
+| Premature speccing | PRD written before opportunity is validated | Four Risks gate in Identify |
 
 ---
 
 ## Framework References
 
-- **Melissa Torres — *Continuous Discovery Habits*:** Opportunity Solution Tree structure. Opportunity-first framing. Solutions as hypotheses behind validated opportunities.
-- **Marty Cagan — *Inspired*:** Four Risks (Value, Usability, Feasibility, Viability) as the gate before speccing. Missionary vs. mercenary teams.
-- **Melissa Perri — *Escaping the Build Trap*:** Outcome over output. Strategy deployment chain (Vision → Strategic Intent → Initiative → Option). The build trap is entered at the moment of premature commitment, not at the moment of building.
+**Teresa Torres — *Continuous Discovery Habits***: Opportunity Solution Tree structure. Opportunity-first framing — solutions are hypotheses behind validated opportunities. Continuous research as the source of opportunities, not stakeholder handoffs.
+
+**Marty Cagan — *Inspired***: Four Risks (Value, Usability, Feasibility, Viability) as the gate before speccing. Discovery and delivery running in parallel. Missionary vs. mercenary team distinction.
+
+**Melissa Perri — *Escaping the Build Trap***: Outcome over output. The build trap is entered at the moment of premature commitment. The Product Kata. Strategy deployment chain: Vision → Strategic Intent → Initiative.
+
+**Where UIE differs**: Torres' OST doesn't include financial model discipline or kill switches. Cagan's Four Risks don't include epistemic labeling. Perri's outcome framing doesn't have a structured opportunity tree with evidence requirements. UIE adds the Mission Stack as a prerequisite, the epistemic inventory as a forcing function, and the Open Risks Register as a prospective failure inventory. The synthesis is the method.
